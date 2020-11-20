@@ -1,0 +1,7 @@
+[
+    {"name":"coke", "price":12, "quantity":5},
+    {"name":"M150", "price":10, "quantity":5},
+    {"name":"oishi", "price":30, "quantity":2},
+    {"name":"vitaday", "price":17, "quantity":5},
+    {"name":"birdy", "price":14, "quantity":1}
+]

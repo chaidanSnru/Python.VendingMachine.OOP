@@ -1,0 +1,47 @@
+@startuml class diagram
+class Vendingmachine {
+    -__drinkmanager
+    -__moneymanager
+    - void __init__(self, drinkmanager, moneymanager)
+    + void vendingmachineStart()
+}
+
+Class MoneyManager {
+    -__changemoney
+    -__customermoney
+    - void __init__(self, moneyjson)
+    -__changemoney get__changemoney(self)
+    +void set__changemoney(self, x)
+    +__customermoney get__customermoney(self)
+    +void set__customermoney(self, y)
+    +void recordMoney(self, jsonmoneydata)
+    +string payChangeMoney(self, changemoney)
+
+}
+
+Class DrinkManager {
+    -__drinkdata : drink [1..*]
+    -void __init__(self, drinkjson)
+    +void add__drinkdata(self, drink)
+    +__drinkdata get__drinkdata(self)
+    +availabledrink getavailable__drinkdata(self)
+    +void recordDrink(self, jsondrinkdata)
+    +string spenceDrink(self, drinkname)
+}
+
+Class Drink {
+    -__name
+    -__price
+    -__quantity
+    -void __init__(self, name, price, quantity)
+    +__name get__name(self)
+    +void set__name(self, x)
+    +__price get__price(self)
+    +void set__price(self, y)
+    +__quantity get__quantity(self)
+    +void set__quantity(self, z)
+}
+Vendingmachine "1" *-- "1" DrinkManager : have >
+Vendingmachine "1" *-- "1" MoneyManager : have >
+DrinkManager "1" *-- "manay" Drink :have >
+@enduml
